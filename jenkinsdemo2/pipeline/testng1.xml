@@ -4,8 +4,7 @@
   <test thread-count="5" name="Test">
  <parameter name="browser" value="edge"></parameter>	
   <!--<parameter name="url" value="https://www.google.com/"></parameter>-->
-  <parameter name="browser" value="${Browser}"></parameter>	
-  <parameter name="url" value="${Url}"></parameter>
+  <parameter name="url" value="https://www.amazon.in/"></parameter>
     <classes>
       <class name="test.NewTest"/>
     </classes>

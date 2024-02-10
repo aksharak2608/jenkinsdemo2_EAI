@@ -10,13 +10,13 @@ import org.testng.annotations.Parameters;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
-static WebDriver driver;
+public static WebDriver driver;
 	@Parameters({"browser","url"})
 	@BeforeMethod
 	public void beforemethod(String browser, String url)
 	{
 		
-		Ibrowser(browser,url);
+		driver=Ibrowser(browser,url);
 	}
 	
 	
@@ -28,7 +28,7 @@ static WebDriver driver;
 		System.out.println("browser closed");
 	}
 	
-	public static WebDriver Ibrowser(String NameOfBrowser, String url) {
+	public WebDriver Ibrowser(String NameOfBrowser, String url) {
 		if(NameOfBrowser.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
@@ -39,7 +39,7 @@ static WebDriver driver;
 		}
 		else if(NameOfBrowser.equalsIgnoreCase("edge"))
 		{
-			WebDriverManager.edgedriver().setup();
+			WebDriverManager.edgedriver()	.setup();
 			driver= new EdgeDriver();
 			
 		}
